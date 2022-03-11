@@ -1,0 +1,41 @@
+<body>
+    <div class="container">
+        <form name="form" action="/enterContact" method="post" onsubmit="return checkForm()">
+            <h1>{{title}}</h1>
+            <span id="error"></span><br>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="nameTxt"><br>
+
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phoneTxt"><br>
+
+            <label for="phoneType">Phone Type</label>
+            <select name="phoneType" id="phoneTypeSelect">
+                <option value="Mobile">Mobile</option>
+                <option value="Work">Work</option>
+                <option value="Home">Home</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function checkForm() {
+            let x = document.forms["form"]["name"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            let i = document.forms["form"]["phone"].value;
+            if (i == ""){
+                alert("Phone number must be filled out");
+                return false;
+            }
+            let p = document.forms["form"]["phoneType"].value;
+            if(p == ""){
+                alert("Phone type must be filled out")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
